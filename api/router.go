@@ -1,20 +1,15 @@
 package api
 
 import (
-	"net/http"
-
+	"github.com/matisszilard/gondol/controller"
 	gin "gopkg.in/gin-gonic/gin.v1"
 )
-
-func index(c *gin.Context) {
-	c.String(http.StatusOK, "Hello World!")
-}
 
 // Serve the http server
 func Serve() {
 	router := gin.Default()
 
-	router.GET("/", index)
+	router.GET("/", controller.HelloWorld)
 
 	router.Run(":8080")
 }
