@@ -2,3 +2,8 @@ package: github.com/matisszilard/gondol
 import:
 - package: gopkg.in/gin-gonic/gin.v1
   version: v1.1.4
+- package: gopkg.in/gorethink/gorethink.v3
+  version: v3.0.2
+- package: github.com/Sirupsen/logrus
+  version: v1.0.0
+- package: github.com/facebookgo/inject

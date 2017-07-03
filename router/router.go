@@ -1,4 +1,4 @@
-package api
+package router
 
 import (
 	"github.com/matisszilard/gondol/controller"
@@ -10,6 +10,14 @@ func Serve() {
 	router := gin.Default()
 
 	router.GET("/", controller.HelloWorld)
+
+	users := router.Group("/users")
+	{
+		users.GET("", controller.GetUsers)
+		users.POST("", controller.PostUser)
+
+		users.GET("/:id", controller.GetUser)
+	}
 
 	router.Run(":8080")
 }
