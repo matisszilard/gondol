@@ -10,7 +10,7 @@ import (
 )
 
 // HelloWorld hey
-func HelloWorld(c *gin.Context) {
+func RootController(c *gin.Context) {
 	c.String(http.StatusOK, "Hello World!")
 }
 

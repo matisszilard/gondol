@@ -5,9 +5,12 @@ import (
 	r "gopkg.in/gorethink/gorethink.v3"
 )
 
-const driver = "rethinkdb"
-
 const (
+	driver = "rethinkdb"
+
+	// GondolDatabaseName holds the database name of the gondol project
+	gondolDatabaseName = "gondol"
+
 	// UsersTableName name of the table used for storing users
 	UsersTableName = "users"
 )
@@ -19,15 +22,10 @@ type Store struct {
 }
 
 // Load datastore settings based on enviroment
-func Load() *Store {
-	var (
-		address  = "localhost:32775"
-		database = "gondol"
-	)
-
-	log.Infof("using database server: %s", address)
+func Load(address string) *Store {
+	log.Infof("rethinkstore load - using database server: %s", address)
 	var s Store
-	s.session = s.new(driver, address, database)
+	s.session = s.new(driver, address, gondolDatabaseName)
 	s.Users = &Users{s.session}
 	return &s
 }

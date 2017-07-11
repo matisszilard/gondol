@@ -2,20 +2,21 @@ package main
 
 import (
 	log "github.com/Sirupsen/logrus"
+	inject "github.com/facebookgo/inject"
 	gondol "github.com/matisszilard/gondol/router"
-	s "github.com/matisszilard/gondol/store"
+	"github.com/matisszilard/gondol/store"
+	"github.com/matisszilard/gondol/store/rethinkstore"
 )
 
 func main() {
 	log.Info("Starting gondol...")
 
-	log.Info("Loading users from the database")
-	users, err := s.GetUsers()
+	s := store.Load()
+	rs := rethinkstore.Load("localhost:32769")
+	err := inject.Populate(s, rs.Users)
 	if err != nil {
-		log.Error("Something bad happend - {}", err)
-		return
+		panic(err)
 	}
-	log.Info("Loaded users - {}", users)
 
 	gondol.Serve()
 }

@@ -12,21 +12,21 @@ type UserStore interface {
 
 // GetUser gets a user by the given id from the database
 func GetUser(id string) (*model.User, error) {
-	return getImplementation().Users().Get(id)
+	return instance.Users.Get(id)
 }
 
 // GetUsers returns all users from the database
 func GetUsers() (*[]model.User, error) {
-	return getImplementation().Users().GetAll()
+	return instance.Users.GetAll()
 }
 
 // CreateUser creates and saves a new user to the database
 // returns the newly created users db id
 func CreateUser(user *model.User) (string, error) {
-	return getImplementation().Users().Create(user)
+	return instance.Users.Create(user)
 }
 
 // SaveUser saves the user to the database
 func SaveUser(user *model.User) error {
-	return getImplementation().Users().Save(user)
+	return instance.Users.Save(user)
 }

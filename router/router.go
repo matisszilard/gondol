@@ -9,7 +9,7 @@ import (
 func Serve() {
 	router := gin.Default()
 
-	router.GET("/", controller.HelloWorld)
+	router.GET("/", controller.RootController)
 
 	users := router.Group("/users")
 	{
