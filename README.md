@@ -1,4 +1,4 @@
-# gondol
+# gondol [![Build Status](https://travis-ci.org/matisszilard/gondol.svg?branch=master)](https://travis-ci.org/matisszilard/gondol)
 
 NOTE: this project is for personal use for learning golang
 
