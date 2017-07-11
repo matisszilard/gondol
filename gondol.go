@@ -15,6 +15,7 @@ func main() {
 	rs := rethinkstore.Load("localhost:32769")
 	err := inject.Populate(s, rs.Users)
 	if err != nil {
+		log.Fatal(err.Error())
 		panic(err)
 	}
 

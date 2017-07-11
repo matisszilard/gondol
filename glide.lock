@@ -1,10 +1,12 @@
-hash: 811f5a6762102a67bec3c104b9d67f9beccccc97c8c11f3b425153dc9f04fbed
-updated: 2017-07-03T23:03:16.596677091+03:00
+hash: 3ab907984b07891d1b4374172abaa4cec63cb920a3d1d403cbe2f2844eca30c1
+updated: 2017-07-11T22:34:25.318426607+03:00
 imports:
 - name: github.com/cenkalti/backoff
   version: a6030178a585d5972d4d33ce61f4a1fa40eaaed0
 - name: github.com/facebookgo/inject
   version: cc1aa653e50f6a9893bcaef89e673e5b24e1e97b
+- name: github.com/facebookgo/structtag
+  version: 217e25fb96916cc60332e399c9aa63f5c422ceed
 - name: github.com/gin-gonic/gin
   version: d5b353c5d5a560322e6d96121c814115562501f7
   subpackages:

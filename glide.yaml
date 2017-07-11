@@ -7,3 +7,4 @@ import:
 - package: github.com/Sirupsen/logrus
   version: v1.0.0
 - package: github.com/facebookgo/inject
+- package: github.com/facebookgo/structtag
